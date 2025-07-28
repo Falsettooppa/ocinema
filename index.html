@@ -1,24 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Movie Library</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Movie Library</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div class="app">
-        <h1>🎬 OLEGIT Movie Library</h1>
-        
-        <input type="text" id="movieTitle" placeholder="Enter movie title">
-        <button id="addMovieBtn">Add Movie</button>
-        
-        <div id="library"></div>
-        <div id="movieDetails"></div>
-        <div id="errorMessage"></div>
-        <div id="loadingMessage" style="display: none;">Loading...</div>
-        <div id="noResultsMessage" style="display: none;">No results found.</div>
+  <div class="app">
+    <h1>🎬 Movie Library</h1>
+
+    <div class="user-section">
+      <label for="userSelect">Select User:</label>
+      <select id="userSelect"></select>
     </div>
 
-    <script src="script.js"></script>
+    <form id="searchForm">
+      <input type="text" id="searchInput" placeholder="Enter Movie Title" required />
+      <button type="submit">Add Movie</button>
+    </form>
+
+    <div id="movieContainer"></div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
