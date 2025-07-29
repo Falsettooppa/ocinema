@@ -112,6 +112,30 @@ button:hover {
   align-items: flex-start;
   gap: 15px;
 }
+#movieLibrary {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+  gap: 1rem;
+  justify-content: center;
+}
+.movie-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: white;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.2s ease;
+  max-width: 220px;
+  margin: auto;
+}
+
+.movie-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
 
 .movie img {
   width: 100px;
