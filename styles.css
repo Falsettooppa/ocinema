@@ -1,90 +1,120 @@
-/* Reset and Base Styles */
-* {
+body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  padding: 20px;
+  color: #333;
 }
 
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
-  padding: 2rem;
-  transition: background 0.3s, color 0.3s;
+.container {
+  max-width: 800px;
+  margin: auto;
 }
 
 h1 {
   text-align: center;
-  margin-bottom: 2rem;
-}
-
-.controls,
-.user-section,
-.add-movie-form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 1rem;
-  justify-content: center;
+  margin-bottom: 20px;
 }
 
 input, select, button {
-  padding: 0.5rem;
-  border-radius: 5px;
-  border: 1px solid #aaa;
-  font-size: 1rem;
+  padding: 10px;
+  margin: 5px 0;
+  font-size: 14px;
 }
 
-/* Movie Display */
-.movie-library {
+input[type="text"], select {
+  width: calc(100% - 22px);
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+}
+
+.library {
+  margin-top: 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1rem;
-  margin-top: 1.5rem;
+  gap: 15px;
 }
 
 .movie {
-  padding: 1rem;
-  border-radius: 10px;
-  background-color: #ffffff;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-  transition: transform 0.2s;
+  background: #fff;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
 }
 
-.movie:hover {
-  transform: scale(1.02);
+.movie img {
+  width: 100px;
+  float: right;
+}
+.movie h2 {
+  margin-top: 0;
+}
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', sans-serif;
+  transition: background 0.3s, color 0.3s;
 }
 
-.movie h3 {
-  margin-bottom: 0.3rem;
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
 }
 
-.action {
-  border-left: 5px solid crimson;
-}
-
-.comedy {
-  border-left: 5px solid orange;
-}
-
-.drama {
-  border-left: 5px solid royalblue;
-}
-
-/* Dark Mode */
-body.dark {
+input, select, button {
   background-color: #1e1e1e;
-  color: #f0f0f0;
+  color: #fff;
+  border: 1px solid #444;
+  padding: 10px;
+  margin: 5px 0;
+  width: 100%;
 }
 
-body.dark .movie {
-  background-color: #2c2c2c;
-}
-
-body.dark input,
-body.dark select,
-body.dark button {
+button:hover {
   background-color: #333;
-  color: #f0f0f0;
-  border-color: #666;
+}
+
+.movie {
+  background-color: #1e1e1e;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #333;
+}
+
+.dark-toggle {
+  margin-top: 10px;
+  text-align: right;
+}
+
+a, h1, h2, h3 {
+  color: #ffffff;
+}
+.dark-toggle input {
+  margin-right: 5px;
+}
+.omdb-results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.omdb-result-card {
+  background: #222;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+.omdb-result-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
 }
