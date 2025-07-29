@@ -1,27 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Movie Library</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <title>🎬 OLEGIT Movie Library</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="app">
-    <h1>🎬 Movie Library</h1>
+  <h1>🎬 OLEGIT Movie Library</h1>
 
-    <div class="user-section">
-      <label for="userSelect">Select User:</label>
-      <select id="userSelect"></select>
-    </div>
-
-    <form id="searchForm">
-      <input type="text" id="searchInput" placeholder="Enter Movie Title" required />
-      <button type="submit">Add Movie</button>
-    </form>
-
-    <div id="movieContainer"></div>
+  <!-- Control Panel -->
+  <div class="controls">
+    <button id="toggleDark">🌙 Toggle Dark Mode</button>
+    <input type="text" id="searchInput" placeholder="Search by title..." />
+    <select id="filterGenre">
+      <option value="">All Genres</option>
+      <option value="Action">Action</option>
+      <option value="Comedy">Comedy</option>
+      <option value="Drama">Drama</option>
+    </select>
   </div>
+
+  <!-- User Section -->
+  <div class="user-section">
+    <label for="userSelect">👤 Select User: </label>
+    <select id="userSelect"></select>
+    <input type="text" id="newUserName" placeholder="New user name" />
+    <button id="addUserBtn">Add User</button>
+  </div>
+
+  <!-- Add Movie Form -->
+  <div class="add-movie-form">
+    <input type="text" id="movieTitle" placeholder="Enter Movie Title" />
+    <select id="movieGenre">
+      <option value="Action">Action</option>
+      <option value="Comedy">Comedy</option>
+      <option value="Drama">Drama</option>
+    </select>
+    <input type="number" id="movieRating" min="0" max="10" placeholder="Rating (0–10)" />
+    <button id="addMovieBtn">Add Movie</button>
+  </div>
+
+  <!-- Movie Library -->
+  <div id="movieLibrary" class="movie-library"></div>
 
   <script src="script.js"></script>
 </body>
