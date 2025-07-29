@@ -7,23 +7,35 @@ body {
 }
 
 .container {
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
+  padding: 20px;
 }
 
 h1 {
   text-align: center;
+  margin-bottom: 30px;
+}
+
+.user-section,
+.add-movie-form,
+.filter-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
   margin-bottom: 20px;
 }
 
 input, select, button {
   padding: 10px;
-  margin: 5px 0;
   font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
 }
 
 input[type="text"], select {
-  width: calc(100% - 22px);
+  width: 220px;
   box-sizing: border-box;
 }
 
@@ -32,89 +44,172 @@ button {
   background-color: #007bff;
   color: #fff;
   border: none;
+  transition: background 0.3s ease;
+}
+button:hover {
+  background-color: #0056b3;
 }
 
 .library {
-  margin-top: 20px;
   display: grid;
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
 }
+.library-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+.library-card:hover {
+  transform: translateY(-5px);
+}
+.library-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+}
+.library-card h3 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  color: inherit;
+}
+.library-card p {
+  font-size: 0.9rem;
+  color: inherit;
+  margin: 0.5rem 0;
+}
+.library-card button.remove-btn {
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.library-card button.remove-btn:hover {
+  background-color: #c82333;
+}
+
+
 
 .movie {
   background: #fff;
   padding: 15px;
   border: 1px solid #ddd;
   border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 15px;
 }
 
 .movie img {
   width: 100px;
-  float: right;
-}
-.movie h2 {
-  margin-top: 0;
-}
-body {
-  background-color: #121212;
-  color: #e0e0e0;
-  font-family: 'Segoe UI', sans-serif;
-  transition: background 0.3s, color 0.3s;
-}
-
-.container {
-  max-width: 800px;
-  margin: auto;
-  padding: 20px;
-}
-
-input, select, button {
-  background-color: #1e1e1e;
-  color: #fff;
-  border: 1px solid #444;
-  padding: 10px;
-  margin: 5px 0;
-  width: 100%;
-}
-
-button:hover {
-  background-color: #333;
-}
-
-.movie {
-  background-color: #1e1e1e;
-  padding: 15px;
-  margin: 10px 0;
+  height: 140px;
+  object-fit: cover;
   border-radius: 5px;
-  border: 1px solid #333;
+}
+
+.movie h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.movie p {
+  margin: 5px 0;
 }
 
 .dark-toggle {
-  margin-top: 10px;
-  text-align: right;
+  text-align: center;
+  margin-top: 20px;
 }
 
-a, h1, h2, h3 {
-  color: #ffffff;
-}
-.dark-toggle input {
-  margin-right: 5px;
-}
 .omdb-results-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1rem;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
+
 .omdb-result-card {
-  background: #222;
-  color: #fff;
-  border-radius: 5px;
-  padding: 10px;
+  background: #f1f1f1;
+  color: #000;
+  border-radius: 8px;
+  padding: 15px;
   text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 .omdb-result-card img {
   width: 100%;
   height: 300px;
   object-fit: cover;
   border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.omdb-result-card button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+body.dark-mode .library-card {
+  background-color: #1e1e1e;
+  border: 1px solid #444;
+}
+body.dark-mode .movie {
+  background-color: #2c2c2c;
+  border: 1px solid #444;
+}
+
+body.dark-mode input, 
+body.dark-mode select {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid #444;
+}
+
+body.dark-mode button {
+  background-color: #444;
+  color: #fff;
+}
+body.dark-mode button:hover {
+  background-color: #666;
+}
+
+body:not(.dark-mode) {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body:not(.dark-mode) input,
+body:not(.dark-mode) select {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #ccc;
+}
+
+.dark-mode .movie {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+}
+.dark-mode .movie img {
+  filter: brightness(0.9);
+}
+.dark-mode .movie h3,
+.dark-mode .movie p {
+  color: #e0e0e0;
 }
